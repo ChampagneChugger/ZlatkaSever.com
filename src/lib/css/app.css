@@ -1,0 +1,927 @@
+@font-face {
+    font-family: "Enthapy";
+    src: url(../fonts/enthapy.woff2);
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Enthapy";
+    color: #39312E;
+}
+
+body,
+html,
+main {
+    width: 100%;
+    height: auto;
+    background-color: #F4F5EF;
+}
+
+nav {
+    position: fixed;
+    top: 0px;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    padding: 20px;
+    height: 65px;
+    z-index: 3;
+    background-color: #F4F5EF;
+    box-shadow: 0px 0px 1px grey;
+}
+
+nav a img {
+    display: block;
+    margin: 0px auto;
+    max-width: 80%;
+}
+
+nav i {
+    font-size: 40px;
+    align-self: center;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.navsocials {
+    display: flex;
+    align-items: center;
+    justify-self: flex-end;
+    gap: 5px;
+}
+
+.navsocials i {
+    font-size: 35px;
+}
+
+.subnav {
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #F4F5EF;
+    height: 100%;
+    width: calc(100% - 50px);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+}
+
+.subnav button {
+    text-align: left;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+    background-color: transparent;
+    outline: none;
+    border: 0px;
+}
+
+.subnav form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E2E2E3;
+    border-radius: 10px;
+}
+
+.subnav form iconify-icon {
+    font-size: 18px;
+    padding: 0px 5px 0px 10px;
+}
+
+.subnav button {
+    width: 100%;
+    display: flex;
+    align-self: flex-start;
+    justify-content: space-between;
+}
+
+.subnav button iconify-icon {
+    padding: 0px;
+    transition: transform 0.3s;
+}
+
+.moretransition {
+    transform: rotate(180deg);
+}
+
+.alinks {
+    border-left: 1px solid silver;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.alinks a {
+    font-size: 18px;
+}
+
+.subnav form input {
+    outline: none;
+    width: 100%;
+    border: 0px;
+    padding: 10px 0px;
+    background-color: #E2E2E3;
+    border-radius: 10px;
+    font-family: "Montserrat";
+}
+
+.subnav form:focus {
+    background-color: #F4F5EF;
+}
+
+.subnav a {
+    text-decoration: none;
+}
+
+header {
+    height: calc(100vh - 135px);
+    position: relative;
+    padding-top: 30px;
+    color: #39312E;
+    text-align: center;
+    margin: 0px auto;
+}
+
+header h1 {
+    letter-spacing: 3px;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    font-size: 35px;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+header img {
+    position: relative;
+    max-width: 70%;
+    z-index: 1;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0px 0px 15px silver;
+}
+
+.slika {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.krug {
+    width: 80%;
+    height: 80%;
+    border: 1px solid #39312E;
+    position: absolute;
+    left: 40px;
+    top: 30px;
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+header h3 {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.findmorec {
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+}
+
+.findmore {
+    margin: 0px auto;
+    width: 80%;
+    text-decoration: none;
+    font-size: 40px;
+    text-align: center;
+    color: #C3A841;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border: 0px;
+    background-color: transparent;
+}
+
+.krugl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 50px;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #C3A841;
+    border-radius: 50%;
+}
+
+.strelica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70px;
+    height: 50px;
+    transform: translateX(-25px)
+}
+
+.crta {
+    width: 100%;
+    height: 2px;
+    background-color: #C3A841;
+}
+
+.gdio {
+    position: absolute;
+    bottom: 28px;
+    right: 0px;
+    width: 10px;
+    height: 2px;
+    background-color: #C3A841;
+    transform: rotate(45deg);
+}
+
+.ddio {
+    position: absolute;
+    top: 28px;
+    right: 0px;
+    width: 10px;
+    height: 2px;
+    background-color: #C3A841;
+    transform: rotate(-45deg);
+}
+
+.omeni {
+    padding: 20px 30px;
+    margin-bottom: 50px;
+}
+
+.omeni h1 {
+    position: relative;
+    font-size: 35px;
+    text-align: center;
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.kh {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.krugh {
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    border: 1px solid #c8c9c4;
+    border-radius: 50%;
+    transform: rotate(8deg);
+}
+
+.omeni h2 {
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 27px;
+    margin-bottom: 40px;
+}
+
+.omeni img {
+    margin-bottom: 30px;
+    max-width: 100%;
+    box-shadow: 0px 0px 15px silver;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.lista p {
+    font-family: "Montserrat";
+}
+
+.lista {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.listitem i iconify-icon {
+    font-size: 18px;
+    color: #B4A03D;
+}
+
+.listitem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.garancija {
+    padding: 50px 30px;
+    background-color: #473E39;
+}
+
+.garancija h1 {
+    text-align: center;
+    color: #F4F5EF;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+}
+
+.garancija .krugh {
+    top: 35px;
+}
+
+.gitems {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    grid-gap: 50px;
+}
+
+.gitem {
+    text-align: center;
+}
+
+.gitem i {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+    padding: 30px;
+    background-color: #F4F5EF;
+    margin: 0px auto;
+    font-size: 120px;
+    margin-bottom: 20px;
+}
+
+.gitem i iconify-icon {
+    color: #473E39;
+}
+
+.gitem h2 {
+    color: #F4F5EF;
+    font-size: 18px;
+    font-family: "Montserrat";
+}
+
+.rad {
+    padding: 50px 30px;
+}
+
+.rad h1 {
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+}
+
+.rad h2 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+
+tr {
+    border: 1px dashed #473E39;
+}
+
+tr p {
+    font-family: "Montserrat";
+    padding: 15px 10px;
+}
+
+.prijaviseh2 {
+    text-align: center;
+}
+
+.rad button {
+    display: block;
+    margin: 0px auto;
+    padding: 20px 40px;
+    background-color: #DEC15B;
+    text-decoration: none;
+    border: 0px;
+    color: #473E39;
+    letter-spacing: 2px;
+    font-size: 16px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.recenzije {
+    padding: 50px 30px;
+    background-color: #473E39;
+}
+
+.recenzije h1 {
+    position: relative;
+    z-index: 1;
+    color: #F4F5EF;
+    letter-spacing: 2px;
+}
+
+.splide__slide img {
+    max-width: 100%;
+}
+
+.konzultacije {
+    padding: 50px 30px;
+}
+
+.konzultacije h1 {
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.konzultacije img {
+    max-width: 100%;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 50%;
+    z-index: 1;
+    position: relative;
+}
+
+.kslika {
+    position: relative;
+}
+
+.kslikaframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-20px) translateY(-20px);
+    border: 2px solid #473E39;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 50%;
+}
+
+.tkontakt {
+    width: 90%;
+    margin: 0px auto;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.forma h3 {
+    font-family: "Montserrat";
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.forma form {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.forma input {
+    outline: none;
+    border: none;
+    font-family: "Montserrat";
+    background-color: #CDC39D;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.forma button {
+    color: #695522;
+    background-color: #DEC465;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 20px 40px;
+    color: #473E39;
+    letter-spacing: 2px;
+    font-size: 16px;
+    border: 0px;
+}
+
+footer {
+    padding: 50px 30px;
+    background-color: #473E39;
+}
+
+.footera {
+    display: block;
+    color: #F4F5EF;
+    text-decoration: none;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.socialmedia {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.socialmedia iconify-icon {
+    background-color: #F4F5EF;
+    font-size: 19px;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.footermenu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    row-gap: 30px;
+}
+
+.footertab {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 15px;
+}
+
+.footertab h1 {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 16px;
+    color: #F4F5EF;
+    letter-spacing: 1px;
+}
+
+.footertab a {
+    font-family: "Montserrat";
+    font-size: 14px;
+    color: #F4F5EF;
+    text-decoration: none;
+}
+
+hr {
+    display: block;
+    border: 0px;
+    background-color: #F4F5EF;
+    height: 1px;
+    margin: 30px 0px;
+}
+
+.copyright {
+    text-align: center;
+    color: #F4F5EF;
+    letter-spacing: 1.5px;
+    line-height: 25px;
+}
+
+.popupc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+}
+
+.popup {
+    width: calc(80% - 80px);
+    padding: 40px;
+    position: relative;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #F4F5EF;
+}
+
+.popup input {
+    font-family: "Montserrat";
+    background-color: #DEE0D2;
+    outline: none;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.popborder {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 110%;
+    height: 108%;
+    background-color: transparent;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    z-index: -1;
+    border: 8px solid #F4F5EF;
+}
+
+.popup form {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.popbuttons {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.popup form button {
+    background-color: #DEC465;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 20px 40px;
+    color: #473E39;
+    letter-spacing: 2px;
+    font-size: 16px;
+    border: 0px;
+}
+
+.popup h1 {
+    position: relative;
+    z-index: 1;
+    letter-spacing: 2px;
+}
+
+.popup form p {
+    margin-top: 30px;
+    text-align: center;
+    font-family: "Montserrat";
+}
+
+.forma form p {
+    margin-top: 30px;
+    text-align: center;
+    font-family: "Montserrat";
+}
+
+.popup form p a {
+    font-family: "Montserrat";
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.forma form p a {
+    font-family: "Montserrat";
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.forma span,
+.popup form span,
+.registerform form span {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.forma span input,
+.popup form span input,
+.registerform form span input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.forma span button,
+.popup form span button {
+    right: 20px;
+    top: 18px;
+    position: absolute;
+    padding: 0px;
+    background-color: transparent;
+    font-size: 22px;
+}
+
+.registerform form span button {
+    right: 0px;
+    bottom: 8px;
+    position: absolute;
+    padding: 0px;
+    background-color: transparent;
+    font-size: 22px;
+}
+
+.registerform p {
+    font-family: "Montserrat";
+    margin-top: 20px;
+    text-align: center;
+}
+
+.bc {
+    text-align: center;
+}
+
+.registerform p a {
+    font-family: "Montserrat";
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navprofil {
+    align-items: center;
+    display: flex;
+    gap: 15px;
+}
+
+.navprofil img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.forma span button iconify-icon,
+.popup form button iconify-icon,
+.registerform form button iconify-icon {
+    color: #473E39;
+}
+
+.registerimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerimg img {
+    margin: 50px 0px;
+    max-width: 100%;
+    width: 100px;
+}
+
+.registerform {
+    padding: 0px 30px;
+}
+
+.registerform h1 {
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.registerform form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.registerform form input {
+    font-family: "Montserrat";
+    padding: 10px 10px 10px 0px;
+    background-color: none;
+    outline: none;
+    border: 0px;
+    background-color: #F4F5EF;
+    border-bottom: 1px solid silver;
+}
+
+.registerform form button:first-of-type {
+    margin-top: 15px;
+}
+
+.registerform form button {
+    color: #695522;
+    background-color: #DEC465;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 20px 40px;
+    color: #473E39;
+    letter-spacing: 2px;
+    font-size: 16px;
+    border: 0px;
+}
+
+.profileheader {
+    height: 180px;
+    background-color: #473E39;
+}
+
+.profilecontent {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    position: relative;
+}
+
+.profilecontent .pa {
+    display: block;
+    margin-bottom: 50px;
+}
+
+.profilecontent .pa img {
+    top: 0px;
+    transform: translateY(-60px);
+    position: absolute;
+    max-width: 100%;
+    width: 100px;
+    border: 6px solid #F4F5EF;
+    border-radius: 50%;
+}
+
+.profilecontent h1 {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    margin-bottom: 5px;
+    font-family: "Montserrat";
+    gap: 5px;
+}
+
+.profilecontent h1 iconify-icon {
+    justify-self: center;
+}
+
+.ptag {
+    font-family: "Montserrat";
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.profilecontent h2 {
+    font-family: "Montserrat";
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.profileoptions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.aboutprofile h3 {
+    font-family: "Montserrat";
+    margin-bottom: 10px;
+}
+
+.aboutprofile p {
+    font-family: "Montserrat";
+}
+
+.aboutprofile {
+    margin-bottom: 40px;
+}
+
+.profileoptions button {
+    width: 100%;
+    outline: none;
+    border: 0px;
+    letter-spacing: 2px;
+    background-color: #DEC465;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 20px 40px;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-50.27 3.22 560 560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="avoid-antialiasing-bugs">
+      <rect width="1920" height="498" x="-70.27" y="-16.78"/>
+    </clipPath>
+    <clipPath id="circular-border">
+      <circle cx="229.73" cy="283.22" r="280"/>
+    </clipPath>
+  </defs>
+  <circle cx="229.73" cy="283.22" r="280" clip-path="url(#avoid-antialiasing-bugs)" style="fill: rgb(71, 62, 57);"/>
+  <circle cx="229.73" cy="213.22" r="115" style="fill: rgb(244, 245, 239);"/>
+  <circle cx="229.73" cy="533.22" r="205" clip-path="url(#circular-border)" style="fill: rgb(244, 245, 239);"/>
+</svg>
