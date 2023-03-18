@@ -12,11 +12,21 @@ datasource db {
 
 model Post {
   id         Int    @id @default(autoincrement())
+  slug       String @unique
   title      String
   coverImage String
   content    String
   User       User   @relation(fields: [userId], references: [id])
   userId     String
+}
+
+model Page {
+  id      Int    @id @default(autoincrement())
+  slug    String @unique
+  title   String
+  content String
+  User    User   @relation(fields: [userId], references: [id])
+  userId  String
 }
 
 model User {
@@ -28,6 +38,8 @@ model User {
   email           String    @unique
   about           String?
   posts           Post[]
+  pages           Page[]
+  videoid         String
   session         Session[]
   Key             Key[]
 

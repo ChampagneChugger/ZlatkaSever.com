@@ -18,6 +18,7 @@ declare global {
 			username: string,
 			email: string,
 			name: string,
+			videoid: string
 		}
 	}
 }

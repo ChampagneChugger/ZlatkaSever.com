@@ -46,7 +46,7 @@
 					<button
 						on:click={() => {
 							goto("/profile/" + data.user?.username)
-						}}>Posjeti svoj kutak</button
+						}}>Posjeti svoj profil</button
 					>
 				</div>
 			{/if}

@@ -77,7 +77,7 @@
 		</button>
 		{#if linksa}
 			<div class="alinks" transition:slide>
-				<a href="/brzotransformacijskaterapija">Brzo transformacijska terapija</a>
+				<a href="/brzo-transformacijska-terapija">Brzo transformacijska terapija</a>
 				<a href="/hipnoterapija">Hipnoterapija</a>
 			</div>
 		{/if}

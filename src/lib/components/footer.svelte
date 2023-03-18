@@ -15,8 +15,8 @@
 	<div class="footermenu">
 		<div class="footertab">
 			<h1>Terapije</h1>
-			<a href="#">Brzo transformacijska terapija</a>
-			<a href="#">Hipnoterapija</a>
+			<a href="/brzo-transformacijska-terapija">Brzo transformacijska terapija</a>
+			<a href="/hipnoterapija">Hipnoterapija</a>
 		</div>
 		<div class="footertab">
 			<h1>Blog</h1>

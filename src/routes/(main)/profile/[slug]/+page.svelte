@@ -25,8 +25,10 @@
 		<div class="aboutprofile">
 			<h3>O meni</h3>
 			<p>
-				{#if profile.about == null}
+				{#if profile.about == null || profile.about == ""}
 					Korisnik nije nadopunio svoj profil.
+				{:else}
+					<p>{profile.about}</p>
 				{/if}
 			</p>
 		</div>

@@ -1,29 +1,75 @@
 import { prisma } from "$lib/server/prisma";
-import { error, redirect } from "@sveltejs/kit";
+import { redirect, error } from "@sveltejs/kit";
 import type { PageServerLoad, Actions } from "./$types"
+import { cloud } from "$lib/server/cloudinary"
 
-export const load: PageServerLoad = async ({ locals, params, parent }) => {
-    const session = await locals.validate()
-    const { user } = await parent()
+export const load: PageServerLoad = async ({ locals, params }) => {
+    const { user, session } = await locals.validateUser()
 
-    if (!session) {
+    if (!session && !user) {
         throw redirect(302, "/")
     }
 
     if (params.slug != user?.username) {
-        throw redirect(302, "/")
+        throw error(401, "Ovo nije vaš korisnički račun.")
+    }
+
+    const getProfile = async () => {
+        const profile = await prisma.user.findUnique({
+            where: {
+                username: params.slug
+            }
+        })
+        return profile
+    }
+
+    return {
+        profile: getProfile()
     }
 };
 
 export const actions: Actions = {
-    default: async ({ request }) => {
-        const { base64 } = Object.fromEntries(await request.formData()) as Record<string, Blob>
+    default: async ({ request, params }) => {
+        const { base64, name, about } = Object.fromEntries(await request.formData()) as {
+            base64: string
+            name: string,
+            about: string
+        }
 
         if (base64.length) {
-            console.log(base64.length)
-            console.log(base64)
+            const slikainfo = await cloud.uploader.upload(base64)
+            try {
+                await prisma.user.update({
+                    where: {
+                        username: params.slug
+                    },
+                    data: {
+                        name,
+                        about,
+                        profile_picture: slikainfo.secure_url
+                    }
+                })
+            } catch (err) {
+                throw redirect(302, "/profile/" + params.slug)
+            }
+
+            throw redirect(302, "/profile/" + params.slug)
         } else {
-            console.log("nije mijenjao sliku")
+            try {
+                await prisma.user.update({
+                    where: {
+                        username: params.slug
+                    },
+                    data: {
+                        name,
+                        about
+                    }
+                })
+            } catch (err) {
+                throw redirect(302, "/profile/" + params.slug)
+            }
+
+            throw redirect(302, "/profile/" + params.slug)
         }
     }
 };
