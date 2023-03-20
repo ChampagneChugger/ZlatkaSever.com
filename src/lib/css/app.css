@@ -1369,3 +1369,163 @@ s {
 }
 
 /* QUILL END */
+
+.blogheader {
+    position: relative;
+    padding: 40px 20px;
+    background-color: #473E39;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 60px;
+}
+
+.blogheader h1 {
+    text-align: center;
+    font-family: "Montserrat";
+    color: #F4F5EF;
+    letter-spacing: 3px;
+    line-height: 50px;
+}
+
+.formwrapper {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: -20px;
+}
+
+.blogheader form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blogheader form label {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgb(117, 112, 112);
+    background-color: #F4F5EF;
+}
+
+.blogheader form iconify-icon {
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+.blogheader form input {
+    font-family: "Montserrat";
+    outline: none;
+    border: 0px;
+    padding: 15px 10px;
+    background-color: #F4F5EF;
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+.noblog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.noblog iconify-icon {
+    color: #473E39;
+    font-size: 120px;
+}
+
+.noblog p {
+    color: #473E39;
+    font-size: 23px;
+    letter-spacing: 2px;
+}
+
+.blog {
+    padding: 0px 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.blogitem {
+    padding: 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #d4d4d0;
+}
+
+.blogitem img {
+    max-width: 100%;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.blogitem h1 {
+    font-size: 23px;
+    font-family: "Montserrat";
+    margin-bottom: 10px;
+}
+
+.blogitem p {
+    font-family: "Montserrat";
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.blogitem .pbutton {
+    font-family: "Montserrat";
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 0px;
+    background-color: transparent;
+}
+
+.blogitem .like {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.blogitem .like iconify-icon {
+    font-size: 25px;
+    color: #F4F5EF;
+    fill: none;
+    stroke: #FF3040;
+    stroke-width: 1;
+    stroke-linejoin: round;
+}
+
+.liked {
+    color: #FF3040 !important;
+    animation-name: likeanim;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes likeanim {
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.blogitem .like button {
+    border: 0px;
+    outline: none;
+    background-color: transparent;
+}
+
+.blogitem .like span {
+    font-family: "Montserrat";
+}

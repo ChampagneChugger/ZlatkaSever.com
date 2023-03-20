@@ -10,14 +10,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model PostLikes {
+  id Int @id @default(autoincrement())
+
+  Post   Post   @relation(fields: [postId], references: [id])
+  postId Int
+  User   User   @relation(fields: [userId], references: [id])
+  userId String
+}
+
 model Post {
-  id         Int    @id @default(autoincrement())
-  slug       String @unique
+  id         Int         @id @default(autoincrement())
+  slug       String      @unique
   title      String
   coverImage String
   content    String
-  User       User   @relation(fields: [userId], references: [id])
+  User       User        @relation(fields: [userId], references: [id])
   userId     String
+  PostLikes  PostLikes[]
+  likes      Int         @default(0)
 }
 
 model Page {
@@ -30,16 +41,17 @@ model Page {
 }
 
 model User {
-  id              String    @id @unique
+  id              String      @id @unique
   name            String
-  username        String    @unique
-  role            Int       @default(0)
-  profile_picture String    @default("/korisnik.svg")
-  email           String    @unique
+  username        String      @unique
+  role            Int         @default(0)
+  profile_picture String      @default("/korisnik.svg")
+  email           String      @unique
   about           String?
   posts           Post[]
   pages           Page[]
   videoid         String
+  PostLikes       PostLikes[]
   session         Session[]
   Key             Key[]
 
