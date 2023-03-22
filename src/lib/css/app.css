@@ -1455,6 +1455,7 @@ s {
 }
 
 .blogitem {
+    position: relative;
     padding: 20px;
     text-decoration: none;
     border-radius: 20px;
@@ -1491,7 +1492,7 @@ s {
 .blogitem .like {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: space-between;
 }
 
 .blogitem .like iconify-icon {
@@ -1501,23 +1502,20 @@ s {
     stroke: #FF3040;
     stroke-width: 1;
     stroke-linejoin: round;
+    transition: 0.5s;
+}
+
+.blogitem form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .liked {
     color: #FF3040 !important;
-    animation-name: likeanim;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-}
-
-@keyframes likeanim {
-    0% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    transition: 0.5s;
 }
 
 .blogitem .like button {
@@ -1528,4 +1526,84 @@ s {
 
 .blogitem .like span {
     font-family: "Montserrat";
+}
+
+.blogspan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.blogspan p {
+    margin-bottom: 0px;
+}
+
+.views {
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    background-color: #39312E;
+    padding: 10px 10px;
+    gap: 5px;
+}
+
+.views span {
+    color: #F4F5EF;
+    font-family: "Montserrat";
+    font-size: 14px;
+}
+
+.views iconify-icon {
+    color: #F4F5EF;
+}
+
+.share {
+    color: #39312E !important;
+    stroke: #39312E !important;
+}
+
+.copied {
+    position: absolute;
+    background-color: #F4F5EF;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+.copied iconify-icon {
+    color: green !important;
+    stroke: green !important;
+}
+
+.copied p {
+    color: #39312E;
+    font-size: 10px;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.pagination button {
+    background-color: #39312E;
+    border: 0px;
+    outline: 0px;
+    padding: 10px;
+}
+
+.pagination button iconify-icon {
+    color: #F4F5EF;
+    font-size: 25px;
 }

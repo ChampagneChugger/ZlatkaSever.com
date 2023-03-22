@@ -1,8 +1,9 @@
 import { prisma } from "$lib/server/prisma"
 import type { PageServerLoad, Actions } from "./$types"
 
-export const load: PageServerLoad = async ({ locals }) => {
+export const load: PageServerLoad = async ({ locals, params }) => {
     const { user } = await locals.validateUser()
+    console.log(params.slug)
     const getBlogPosts = async () => {
         const blog = await prisma.post.findMany({
             orderBy: {
@@ -24,7 +25,7 @@ export const load: PageServerLoad = async ({ locals }) => {
                         id: true
                     }
                 }
-            }, take: 4
+            }, take: 4, skip: (Number(params.slug) - 1) * 4
         })
 
         return blog
