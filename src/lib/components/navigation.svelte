@@ -89,6 +89,8 @@
 				<img src={data.user.profile_picture} alt="Profil" />
 				<p>{data.user.username}</p>
 			</a>
+		{:else}
+			<a href="/login">Prijavi se</a>
 		{/if}
 	</div>
 {/if}

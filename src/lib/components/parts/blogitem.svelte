@@ -95,6 +95,22 @@
 				</button>
 			{:else}
 				<span>{likes} {likes == BigInt(1) ? "like" : "likes"}</span>
+				<button
+					on:click|stopPropagation={() => {
+						navigator.clipboard.writeText(url + "/" + slug)
+						copied = true
+					}}
+					class="blogspan"
+				>
+					{#if copied}
+						<div class="copied">
+							<iconify-icon icon="ic:baseline-check" />
+							<p>Copied!</p>
+						</div>
+					{/if}
+					<iconify-icon icon="mdi:share" class="share" />
+					<p>Share</p>
+				</button>
 			{/if}
 		</div>
 	</div>

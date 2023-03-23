@@ -10,6 +10,7 @@
 	let loggedin: boolean
 
 	$: blogposts = data.blog
+	$: postcount = data.postcount
 
 	if (data.user) {
 		loggedin = true
@@ -18,32 +19,36 @@
 	$: pagenumber = $page.params.slug
 </script>
 
-<Blogheader />
+{#if Number(pagenumber) && blogposts && postcount}
+	<Blogheader />
 
-<div class="blog">
-	{#each blogposts as { title, coverImage, User, slug, likes, id, PostLikes, views }}
-		<Blogitem {title} {coverImage} {User} {slug} {likes} {id} {loggedin} {PostLikes} {views} />
-	{/each}
-	<div class="pagination">
-		<div class="prev">
-			<button
-				on:click={() => {
-					if (Number(pagenumber) == 2) {
-						goto("/blog")
-					} else {
-						goto("/blog/" + (Number(pagenumber) - 1))
-					}
-				}}><iconify-icon icon="material-symbols:keyboard-arrow-left" /></button
-			>
-		</div>
-		{#if data.postcount > 4 * Number(pagenumber)}
-			<div class="next">
+	<div class="blog">
+		{#each blogposts as { title, coverImage, User, slug, likes, id, PostLikes, views }}
+			<Blogitem {title} {coverImage} {User} {slug} {likes} {id} {loggedin} {PostLikes} {views} />
+		{/each}
+		<div class="pagination">
+			<div class="prev">
 				<button
 					on:click={() => {
-						goto("/blog/" + (Number(pagenumber) + 1))
-					}}><iconify-icon icon="material-symbols:keyboard-arrow-right" /></button
+						if (Number(pagenumber) == 2) {
+							goto("/blog")
+						} else {
+							goto("/blog/" + (Number(pagenumber) - 1))
+						}
+					}}><iconify-icon icon="material-symbols:keyboard-arrow-left" /></button
 				>
 			</div>
-		{/if}
+			{#if postcount > 4 * Number(pagenumber)}
+				<div class="next">
+					<button
+						on:click={() => {
+							goto("/blog/" + (Number(pagenumber) + 1))
+						}}><iconify-icon icon="material-symbols:keyboard-arrow-right" /></button
+					>
+				</div>
+			{/if}
+		</div>
 	</div>
-</div>
+{:else}
+	<p>xd</p>
+{/if}

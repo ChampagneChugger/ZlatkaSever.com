@@ -3,43 +3,75 @@ import type { PageServerLoad, Actions } from "./$types"
 
 export const load: PageServerLoad = async ({ locals, params }) => {
     const { user } = await locals.validateUser()
-    console.log(params.slug)
-    const getBlogPosts = async () => {
-        const blog = await prisma.post.findMany({
-            orderBy: {
-                id: "asc"
-            }, include: {
-                User: {
-                    select: {
-                        name: true,
-                        username: true
-                    }
-                },
-                PostLikes: {
-                    where: {
-                        userId: user?.userID
+
+    if (Number(params.slug)) {
+        const getBlogPosts = async () => {
+            const blog = await prisma.post.findMany({
+                orderBy: {
+                    id: "asc"
+                }, include: {
+                    User: {
+                        select: {
+                            name: true,
+                            username: true
+                        }
                     },
-                    select: {
-                        userId: false,
-                        postId: false,
-                        id: true
+                    PostLikes: {
+                        where: {
+                            userId: user?.userID
+                        },
+                        select: {
+                            userId: false,
+                            postId: false,
+                            id: true
+                        }
+                    }
+                }, take: 4, skip: (Number(params.slug) - 1) * 4
+            })
+
+            return blog
+        }
+
+        const getPostCount = async () => {
+            const postcount = await prisma.post.count()
+
+            return postcount
+        }
+
+        return {
+            blog: getBlogPosts(),
+            postcount: getPostCount()
+        }
+    } else {
+        const getPostContent = async () => {
+            const postcontent = await prisma.post.findUnique({
+                where: {
+                    slug: params.slug
+                }, include: {
+                    User: {
+                        select: {
+                            name: true,
+                            username: true
+                        }
+                    }, PostLikes: {
+                        where: {
+                            userId: user?.userID
+                        },
+                        select: {
+                            userId: false,
+                            postId: false,
+                            id: true
+                        }
                     }
                 }
-            }, take: 4, skip: (Number(params.slug) - 1) * 4
-        })
+            })
 
-        return blog
-    }
+            return postcontent
+        }
 
-    const getPostCount = async () => {
-        const postcount = await prisma.post.count()
-
-        return postcount
-    }
-
-    return {
-        blog: getBlogPosts(),
-        postcount: getPostCount()
+        return {
+            post: getPostContent()
+        }
     }
 };
 
