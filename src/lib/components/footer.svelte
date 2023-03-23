@@ -1,5 +1,12 @@
 <script lang="ts">
 	let year = new Date().getFullYear()
+
+	type FooterPosts = {
+		title: string
+		slug: string
+	}[]
+
+	export let footerposts: FooterPosts
 </script>
 
 <footer>
@@ -20,17 +27,17 @@
 		</div>
 		<div class="footertab">
 			<h1>Blog</h1>
-			<a href="#">Blog post 1</a>
-			<a href="#">Blog post 2</a>
-			<a href="#">Blog post 3</a>
+			{#each footerposts as { title, slug }}
+				<a href="/blog/{slug}">{title}</a>
+			{/each}
 		</div>
 		<div class="footertab">
 			<h1>Coaching</h1>
-			<a href="#">Coaching</a>
+			<a href="/coaching">Coaching</a>
 		</div>
 		<div class="footertab">
 			<h1>Moja misija</h1>
-			<a href="#">Moja misija</a>
+			<a href="/moja-misija">Moja misija</a>
 		</div>
 	</div>
 	<hr />

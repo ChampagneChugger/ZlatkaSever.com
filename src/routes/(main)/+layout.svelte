@@ -21,5 +21,5 @@
 	<NavAdj bind:navHeight />
 	<Navigation bind:navHeight {data} />
 	<slot />
-	<Footer />
+	<Footer footerposts={data.footerposts} />
 </main>
