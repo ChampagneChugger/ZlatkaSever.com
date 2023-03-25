@@ -1217,7 +1217,8 @@ hr {
 
 .buttons {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .buttons button {
@@ -1392,12 +1393,27 @@ s {
     position: absolute;
     left: 0px;
     bottom: -20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .blogheader form {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.searchresults2 {
+    width: 90% !important;
+    margin: 0px auto 40px auto !important;
+}
+
+.searchresults2 a {
+    text-decoration: none;
+}
+
+.searchresults2 p {
+    letter-spacing: 1px;
 }
 
 .blogheader form label {
@@ -1606,4 +1622,128 @@ s {
 .pagination button iconify-icon {
     color: #F4F5EF;
     font-size: 25px;
+}
+
+.loggedoutlikes {
+    margin-top: 20px;
+}
+
+.noclassb {
+    margin-top: 0px !important;
+    outline: none;
+    border: 0px;
+    letter-spacing: 2px;
+    background-color: transparent !important;
+    border-top-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+    padding: 0px !important;
+    width: fit-content;
+    font-size: 25px;
+}
+
+.loggedinactions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.likeaction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.likeaction iconify-icon {
+    color: #F4F5EF;
+    transition: 0.5s;
+}
+
+.loggedinactions p {
+    font-size: 14px;
+}
+
+.copied2 {
+    background-color: #473E39;
+}
+
+.share2 {
+    color: #F4F5EF !important;
+}
+
+.copied2 p {
+    font-weight: normal;
+    font-size: 11px;
+}
+
+.thumbnail {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.spana2 {
+    margin-bottom: 20px;
+}
+
+.slikaerror2 {
+    margin-bottom: 30px !important;
+}
+
+.createa {
+    margin-top: 20px;
+    outline: none;
+    border: 0px;
+    letter-spacing: 2px;
+    background-color: #DEC465;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 15px 35px;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.naslovobjave {
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid silver;
+    padding: 10px;
+    font-family: "Montserrat";
+    outline: none;
+}
+
+.searchresults {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    overflow-x: hidden;
+    border: 1px solid silver;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.searchresults p {
+    font-size: 16px;
+}
+
+.searchresults a {
+    display: flex;
+    height: 40px;
+    width: 100%;
+    align-items: center;
+    font-family: "Montserrat";
+    font-size: 16px;
+}
+
+.searchresults a:first-of-type {
+    margin-top: 10px;
 }

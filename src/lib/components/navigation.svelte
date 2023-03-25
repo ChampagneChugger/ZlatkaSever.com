@@ -40,6 +40,29 @@
 			body.classList.remove("no-scroll")
 		}
 	}
+
+	let search: string
+
+	async function pretraga() {
+		const response = await fetch("/api/search", {
+			method: "POST",
+			body: JSON.stringify(search)
+		})
+
+		let { data } = await response.json()
+
+		let searchResults = JSON.parse(data)
+
+		return searchResults
+	}
+
+	let rezultat: any
+
+	$: if (search) {
+		rezultat = pretraga()
+	} else {
+		rezultat = null
+	}
 </script>
 
 <nav bind:clientHeight={navHeight}>
@@ -63,9 +86,21 @@
 	<div style:top={navHeight + "px"} class="subnav">
 		<form use:enhance action="/" method="POST">
 			<i><iconify-icon icon="material-symbols:search-rounded" /></i>
-			<input type="text" placeholder="Pretraži objave" />
+			<input bind:value={search} type="text" placeholder="Pretraži objave" />
 		</form>
 		<!-- svelte-ignore a11y-invalid-attribute -->
+		{#if search}
+			{#await rezultat then rezultati}
+				{#if rezultati.length > 0}
+					<div class="searchresults">
+						<p>Rezultati pretrage:</p>
+						{#each rezultati as { title, slug }}
+							<a href="/blog/{slug}">{title}</a>
+						{/each}
+					</div>
+				{/if}
+			{/await}
+		{/if}
 		<a href="/">Naslovna</a>
 		<button
 			on:click={() => {

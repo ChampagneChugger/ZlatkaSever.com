@@ -23,7 +23,7 @@ model Post {
   id         Int         @id @default(autoincrement())
   slug       String      @unique
   title      String
-  coverImage String
+  coverImage String      @default("../thumbnail.jpg")
   content    String
   User       User        @relation(fields: [userId], references: [id])
   userId     String

@@ -1,5 +1,6 @@
 import { prisma } from "$lib/server/prisma"
 import type { PageServerLoad, Actions } from "./$types"
+import { error } from "@sveltejs/kit";
 
 export const load: PageServerLoad = async ({ locals, params }) => {
     const { user } = await locals.validateUser()
@@ -8,7 +9,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
         const getBlogPosts = async () => {
             const blog = await prisma.post.findMany({
                 orderBy: {
-                    id: "asc"
+                    id: "desc"
                 }, include: {
                     User: {
                         select: {
@@ -38,9 +39,29 @@ export const load: PageServerLoad = async ({ locals, params }) => {
             return postcount
         }
 
-        return {
-            blog: getBlogPosts(),
-            postcount: getPostCount()
+        if (user) {
+            const checkAdmin = async () => {
+                const isAdmin = await prisma.user.findUnique({
+                    where: {
+                        id: user?.userID
+                    }, select: {
+                        role: true
+                    }
+                })
+
+                return isAdmin
+            }
+
+            return {
+                admin: checkAdmin(),
+                blog: getBlogPosts(),
+                postcount: getPostCount()
+            }
+        } else {
+            return {
+                blog: getBlogPosts(),
+                postcount: getPostCount(),
+            }
         }
     } else {
         const getPostContent = async () => {
@@ -69,6 +90,21 @@ export const load: PageServerLoad = async ({ locals, params }) => {
             return postcontent
         }
 
+        try {
+            await prisma.post.update({
+                where: {
+                    slug: params.slug
+                },
+                data: {
+                    views: {
+                        increment: 1
+                    }
+                }
+            })
+        } catch (err) {
+            throw error(401, "Ova stranica ne postoji.")
+        }
+
         return {
             post: getPostContent()
         }
@@ -82,10 +118,10 @@ export const actions: Actions = {
 
         const isLiked = await prisma.postLikes.count({
             where: {
-                AND: [{
-                    postId: Number(blogpostid),
-                    userId: user?.userID
-                }]
+                AND: [
+                    { postId: Number(blogpostid) },
+                    { userId: user?.userID }
+                ]
             }
         })
 
@@ -110,10 +146,10 @@ export const actions: Actions = {
         } else {
             await prisma.postLikes.deleteMany({
                 where: {
-                    AND: [{
-                        postId: Number(blogpostid),
-                        userId: user?.userID
-                    }]
+                    AND: [
+                        { postId: Number(blogpostid) },
+                        { userId: user?.userID }
+                    ]
                 }
             })
 

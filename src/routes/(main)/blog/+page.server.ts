@@ -6,7 +6,7 @@ export const load: PageServerLoad = async ({ locals }) => {
     const getBlogPosts = async () => {
         const blog = await prisma.post.findMany({
             orderBy: {
-                id: "asc"
+                id: "desc"
             }, include: {
                 User: {
                     select: {
@@ -36,9 +36,29 @@ export const load: PageServerLoad = async ({ locals }) => {
         return postcount
     }
 
-    return {
-        blog: getBlogPosts(),
-        postcount: getPostCount()
+    if (user) {
+        const checkAdmin = async () => {
+            const isAdmin = await prisma.user.findUnique({
+                where: {
+                    id: user?.userID
+                }, select: {
+                    role: true
+                }
+            })
+
+            return isAdmin
+        }
+
+        return {
+            admin: checkAdmin(),
+            blog: getBlogPosts(),
+            postcount: getPostCount()
+        }
+    } else {
+        return {
+            blog: getBlogPosts(),
+            postcount: getPostCount(),
+        }
     }
 };
 
@@ -49,10 +69,10 @@ export const actions: Actions = {
 
         const isLiked = await prisma.postLikes.count({
             where: {
-                AND: [{
-                    postId: Number(blogpostid),
-                    userId: user?.userID
-                }]
+                AND: [
+                    { postId: Number(blogpostid) },
+                    { userId: user?.userID }
+                ]
             }
         })
 
@@ -77,10 +97,10 @@ export const actions: Actions = {
         } else {
             await prisma.postLikes.deleteMany({
                 where: {
-                    AND: [{
-                        postId: Number(blogpostid),
-                        userId: user?.userID
-                    }]
+                    AND: [
+                        { postId: Number(blogpostid) },
+                        { userId: user?.userID }
+                    ]
                 }
             })
 
