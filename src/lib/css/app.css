@@ -31,7 +31,7 @@ nav {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     padding: 20px;
-    height: 65px;
+    height: 40px;
     z-index: 3;
     background-color: #F4F5EF;
     box-shadow: 0px 0px 1px grey;
@@ -40,7 +40,7 @@ nav {
 nav a img {
     display: block;
     margin: 0px auto;
-    max-width: 80%;
+    max-width: 60%;
 }
 
 nav i {
@@ -63,6 +63,32 @@ nav i {
     font-size: 35px;
 }
 
+.whatsappwrapper {
+    width: 100%;
+    font-size: 14px !important;
+    position: fixed;
+    bottom: 40px;
+    left: 0px;
+}
+
+.whatsappwrapper p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 30px;
+    background-color: #1BD741;
+    padding: 15px 0px;
+    border-radius: 25px;
+    color: #F4F5EF;
+    letter-spacing: 2.5px;
+    gap: 10px;
+}
+
+.whatsappwrapper p iconify-icon {
+    font-size: 30px;
+    color: #F4F5EF;
+}
+
 .subnav {
     z-index: 2;
     position: fixed;
@@ -75,13 +101,13 @@ nav i {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    font-size: 25px;
+    font-size: 18px;
     letter-spacing: 1.5px;
 }
 
 .subnav button {
     text-align: left;
-    font-size: 25px;
+    font-size: 18px;
     letter-spacing: 1.5px;
     background-color: transparent;
     outline: none;
@@ -144,6 +170,7 @@ nav i {
 }
 
 .subnav a {
+    font-size: 18px;
     text-decoration: none;
 }
 
@@ -158,19 +185,19 @@ header {
 
 header h1 {
     letter-spacing: 3px;
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 10px;
 }
 
 header h2 {
-    font-size: 35px;
+    font-size: 30px;
     letter-spacing: 2px;
     margin-bottom: 40px;
 }
 
 header img {
     position: relative;
-    max-width: 70%;
+    max-width: 60%;
     z-index: 1;
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -183,18 +210,18 @@ header img {
 }
 
 .krug {
-    width: 80%;
+    width: 70%;
     height: 80%;
     border: 1px solid #39312E;
     position: absolute;
-    left: 40px;
-    top: 30px;
+    left: 50px;
+    top: 20px;
     border-radius: 50%;
     transform: rotate(45deg);
 }
 
 header h3 {
-    font-size: 20px;
+    font-size: 17px;
     letter-spacing: 2px;
 }
 
@@ -208,7 +235,7 @@ header h3 {
     margin: 0px auto;
     width: 80%;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     color: #C3A841;
     display: flex;
@@ -225,8 +252,8 @@ header h3 {
     justify-content: center;
     position: relative;
     margin-left: 50px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border: 2px solid #C3A841;
     border-radius: 50%;
 }
@@ -274,7 +301,7 @@ header h3 {
 
 .omeni h1 {
     position: relative;
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
     letter-spacing: 2px;
     z-index: 1;
@@ -306,7 +333,7 @@ header h3 {
 }
 
 .omeni img {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     max-width: 100%;
     box-shadow: 0px 0px 15px silver;
     border-top-left-radius: 20px;
@@ -317,6 +344,7 @@ header h3 {
 
 .lista p {
     font-family: "Montserrat";
+    font-size: 14px;
 }
 
 .lista {
@@ -349,10 +377,11 @@ header h3 {
     letter-spacing: 2px;
     position: relative;
     z-index: 1;
+    font-size: 30px;
 }
 
 .garancija .krugh {
-    top: 35px;
+    top: 30px;
 }
 
 .gitems {
@@ -371,12 +400,12 @@ header h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 130px;
-    height: 130px;
+    width: 90px;
+    height: 90px;
     padding: 30px;
     background-color: #F4F5EF;
     margin: 0px auto;
-    font-size: 120px;
+    font-size: 90px;
     margin-bottom: 20px;
 }
 
@@ -398,6 +427,7 @@ header h3 {
     position: relative;
     z-index: 1;
     letter-spacing: 2px;
+    font-size: 30px;
 }
 
 .rad h2 {
@@ -419,6 +449,7 @@ tr {
 tr p {
     font-family: "Montserrat";
     padding: 15px 10px;
+    font-size: 14px;
 }
 
 .prijaviseh2 {
@@ -451,6 +482,7 @@ tr p {
     z-index: 1;
     color: #F4F5EF;
     letter-spacing: 2px;
+    font-size: 30px;
 }
 
 .splide__slide img {
@@ -466,6 +498,8 @@ tr p {
     z-index: 1;
     letter-spacing: 2px;
     margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
 }
 
 .konzultacije img {
@@ -536,7 +570,7 @@ tr p {
     padding: 20px 40px;
     color: #473E39;
     letter-spacing: 2px;
-    font-size: 16px;
+    font-size: 14px;
     border: 0px;
 }
 
@@ -549,7 +583,7 @@ footer {
     display: block;
     color: #F4F5EF;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 30px;
     letter-spacing: 1.5px;
     margin-bottom: 20px;
 }
@@ -765,6 +799,7 @@ hr {
     font-family: "Montserrat";
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
 }
 
 .navprofil {
@@ -804,6 +839,7 @@ hr {
 .registerform h1 {
     letter-spacing: 3px;
     margin-bottom: 20px;
+    font-size: 30px;
 }
 
 .registerform form {
@@ -836,7 +872,7 @@ hr {
     padding: 20px 40px;
     color: #473E39;
     letter-spacing: 2px;
-    font-size: 16px;
+    font-size: 11px;
     border: 0px;
 }
 
@@ -871,7 +907,7 @@ hr {
 .profilecontent h1 {
     display: flex;
     align-items: center;
-    font-size: 25px;
+    font-size: 18px;
     margin-bottom: 5px;
     font-family: "Montserrat";
     gap: 5px;
@@ -886,6 +922,7 @@ hr {
     text-decoration: none;
     font-weight: bold;
     margin-bottom: 30px;
+    font-size: 14px;
 }
 
 .profilecontent h2 {
@@ -904,10 +941,12 @@ hr {
 .aboutprofile h3 {
     font-family: "Montserrat";
     margin-bottom: 10px;
+    font-size: 16px;
 }
 
 .aboutprofile p {
     font-family: "Montserrat";
+    font-size: 14px;
 }
 
 .aboutprofile {
@@ -925,6 +964,7 @@ hr {
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     padding: 20px 40px;
+    font-size: 10px;
 }
 
 .editprofile {
@@ -934,11 +974,12 @@ hr {
 .editprofile h1 {
     font-family: "Montserrat";
     margin-bottom: 10px;
+    font-size: 30px;
 }
 
 .editprofile h2 {
     font-family: "Montserrat";
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 30px;
 }
 
@@ -965,7 +1006,7 @@ hr {
 .pa {
     font-family: "Montserrat";
     font-weight: bold;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .pinfo {
@@ -1115,6 +1156,7 @@ hr {
     color: #F4F5EF;
     letter-spacing: 3px;
     line-height: 50px;
+    font-size: 30px;
 }
 
 .pageheader span {
@@ -1126,6 +1168,7 @@ hr {
 .pageheader span p {
     font-family: "Montserrat";
     color: #F4F5EF;
+    font-size: 11px;
 }
 
 .pageheader span a {
@@ -1134,6 +1177,7 @@ hr {
     font-weight: bold;
     text-decoration: none;
     width: fit-content;
+    font-size: 18px;
 }
 
 .pageheader span button {
@@ -1148,6 +1192,7 @@ hr {
     border-bottom-left-radius: 5px;
     padding: 15px 35px;
     width: fit-content;
+    font-size: 14px;
 }
 
 .pagecontent {
@@ -1155,13 +1200,13 @@ hr {
 }
 
 .pagecontent iconify-icon {
-    font-size: 80px;
+    font-size: 60px;
     color: #473E39;
     transform: translateX(-10px) rotate(180deg);
 }
 
 .pagecontent h1 {
-    font-size: 22px;
+    font-size: 18px;
     font-family: "Montserrat";
     line-height: 40px;
     margin-bottom: 20px;
@@ -1171,6 +1216,7 @@ hr {
     font-family: "Montserrat" !important;
     line-height: 30px;
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
 .pagecontent span {
@@ -1240,7 +1286,7 @@ hr {
     margin-top: 30px;
     font-weight: bold;
     line-height: 25px;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 /* QUILL START*/
@@ -1377,7 +1423,7 @@ s {
 
 .blogheader {
     position: relative;
-    padding: 40px 20px;
+    padding: 60px 20px;
     background-color: #473E39;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -1390,6 +1436,7 @@ s {
     color: #F4F5EF;
     letter-spacing: 3px;
     line-height: 50px;
+    font-size: 30px;
 }
 
 .formwrapper {
@@ -1489,7 +1536,7 @@ s {
 }
 
 .blogitem h1 {
-    font-size: 23px;
+    font-size: 18px;
     font-family: "Montserrat";
     margin-bottom: 10px;
 }
@@ -1599,6 +1646,7 @@ s {
 }
 
 .copied iconify-icon {
+    font-size: 30px;
     color: green !important;
     stroke: green !important;
 }
@@ -1665,6 +1713,7 @@ s {
 .likeaction iconify-icon {
     color: #F4F5EF;
     transition: 0.5s;
+    font-size: 30px;
 }
 
 .loggedinactions p {
@@ -1676,6 +1725,7 @@ s {
 }
 
 .share2 {
+    font-size: 30px;
     color: #F4F5EF !important;
 }
 
@@ -1710,6 +1760,7 @@ s {
     padding: 15px 35px;
     width: fit-content;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .naslovobjave {
@@ -1746,7 +1797,7 @@ s {
     width: 100%;
     align-items: center;
     font-family: "Montserrat";
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .searchresults a:first-of-type {
@@ -1759,7 +1810,7 @@ s {
 
 .moja-misija img {
     display: block;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0px auto 40px auto;
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
@@ -1772,14 +1823,17 @@ s {
 }
 
 .mojac h1 {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-align: center;
     margin-bottom: 20px;
+    font-size: 25px;
+    font-family: "Montserrat";
 }
 
 .moja-misija p {
     line-height: 27px;
     margin-bottom: 15px;
+    font-size: 14px;
     font-family: "Montserrat";
 }
 
@@ -1794,7 +1848,7 @@ s {
     padding: 10px;
     color: #F4F5EF;
     letter-spacing: 2px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .certifikati button iconify-icon {
@@ -1842,7 +1896,7 @@ s {
 
 .videoheader h1 {
     font-family: "Montserrat";
-    font-size: 23px;
+    font-size: 18px;
     color: #F4F5EF;
     letter-spacing: 1px;
 }
@@ -1853,7 +1907,7 @@ s {
 
 .video h1 {
     font-family: "Montserrat";
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 40px;
 }
 
@@ -1878,7 +1932,7 @@ s {
     color: #F4F5EF;
     text-align: center;
     line-height: 30px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .nema {
@@ -1915,6 +1969,7 @@ s {
 
 .kreirajsesiju a {
     text-decoration: none;
+    font-size: 14px;
 }
 
 .createsession {
@@ -1923,7 +1978,7 @@ s {
 
 .createsession h1 {
     font-family: "Montserrat";
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
@@ -1957,6 +2012,7 @@ s {
     width: fit-content;
     font-family: "Montserrat";
     font-weight: bold;
+    font-size: 11px;
 }
 
 .korisnici {
@@ -1989,6 +2045,7 @@ s {
     font-family: "Montserrat";
     text-decoration: none;
     font-weight: bold;
+    font-size: 14px;
 }
 
 .korisnik button {
@@ -2024,6 +2081,7 @@ s {
     width: fit-content;
     font-family: "Montserrat";
     font-weight: bold;
+    font-size: 11px;
 }
 
 .pozivwrapper {
@@ -2044,4 +2102,99 @@ s {
     height: 100%;
     z-index: 3;
     overflow: hidden;
+}
+
+.coaching {
+    padding-top: 30px;
+}
+
+.coaching img {
+    display: block;
+    max-width: 100%;
+    margin: 0px auto 30px auto;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    box-shadow: 0px 0px 15px silver;
+}
+
+.coachingc {
+    padding: 0px 20px;
+}
+
+.coaching h1 {
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 25px;
+    line-height: 37px;
+    margin-bottom: 40px;
+}
+
+.coachingitems {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.coachingitems .citem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0px;
+    gap: 20px;
+}
+
+.coachingitems .citem iconify-icon {
+    font-size: 90px;
+}
+
+.coachingitems .citem h2 {
+    font-size: 18px;
+    font-family: "Montserrat";
+    letter-spacing: 1px;
+}
+
+.coachingitems .citem p {
+    font-size: 14px;
+    font-family: "Montserrat";
+    letter-spacing: 1px;
+}
+
+.coachingitems .citem:nth-of-type(odd) {
+    background-color: #473E39;
+}
+
+.coachingitems .citem:nth-of-type(odd) iconify-icon {
+    color: #F4F5EF;
+}
+
+.coachingitems .citem:nth-of-type(odd) h2 {
+    color: #F4F5EF;
+}
+
+.coachingitems .citem:nth-of-type(odd) p {
+    color: #F4F5EF;
+}
+
+.coachingr {
+    padding: 40px 20px;
+}
+
+.coachingr h1 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.coachingr .recenzije {
+    padding: 0px;
+    background-color: #F4F5EF;
+}
+
+.coachingr .recenzije .kh {
+    display: none;
+}
+
+.coachingr .recenzije img {
+    border-radius: 0px;
 }

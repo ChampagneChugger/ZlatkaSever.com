@@ -127,5 +127,8 @@
 		{:else}
 			<a href="/login">Prijavi se</a>
 		{/if}
+		<a class="whatsappwrapper" href="https://wa.me/0953968293" target="_blank" rel="noreferrer">
+			<p>Stupimo u kontakt<iconify-icon icon="ic:baseline-whatsapp" /></p>
+		</a>
 	</div>
 {/if}
