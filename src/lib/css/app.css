@@ -679,6 +679,10 @@ hr {
     font-size: 12px;
 }
 
+.splide__slide img {
+    width: 100%;
+}
+
 .popborder {
     position: absolute;
     top: -25px;
