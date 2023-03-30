@@ -1,7 +1,6 @@
 import { auth } from "$lib/server/lucia"
 import { redirect, fail } from "@sveltejs/kit"
 import { LuciaError } from "lucia-auth";
-import { v4 as uuid } from "uuid"
 import type { Actions, PageServerLoad } from "./$types"
 
 export const load: PageServerLoad = async ({ locals }) => {
@@ -25,9 +24,8 @@ export const actions: Actions = {
                 },
                 attributes: {
                     name: ime,
-                    username: korisnickoime,
-                    email: email,
-                    videoid: uuid()
+                    username: korisnickoime.toLowerCase(),
+                    email: email
                 }
             })
         } catch (err) {

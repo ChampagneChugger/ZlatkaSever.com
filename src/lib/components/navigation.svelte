@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from "svelte"
-	import { enhance } from "$app/forms"
 	import { slide } from "svelte/transition"
 	import popup from "$lib/stores/popup"
 	import type { PageData } from "../../routes/(main)/./$types"
@@ -84,7 +83,7 @@
 </nav>
 {#if otvoreni}
 	<div style:top={navHeight + "px"} class="subnav">
-		<form use:enhance action="/" method="POST">
+		<form on:submit|preventDefault={pretraga}>
 			<i><iconify-icon icon="material-symbols:search-rounded" /></i>
 			<input bind:value={search} type="text" placeholder="Pretraži objave" />
 		</form>
@@ -118,8 +117,9 @@
 		{/if}
 		<a href="/blog">Blog</a>
 		<a href="/coaching">Coaching</a>
-		<a href="/mojamisija">Moja misija</a>
+		<a href="/moja-misija">Moja misija</a>
 		{#if data.user}
+			<a href="/video-chat/">Video sesije</a>
 			<a class="navprofil" href="/profile/{data.user.username}">
 				<img src={data.user.profile_picture} alt="Profil" />
 				<p>{data.user.username}</p>

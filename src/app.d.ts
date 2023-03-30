@@ -17,8 +17,7 @@ declare global {
 		type UserAttributes = {
 			username: string,
 			email: string,
-			name: string,
-			videoid: string
+			name: string
 		}
 	}
 }

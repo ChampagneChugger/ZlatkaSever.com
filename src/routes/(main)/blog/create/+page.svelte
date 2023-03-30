@@ -66,7 +66,7 @@
 		<input name="pagecontent" type="text" value={content} hidden />
 		<div class="buttons">
 			<button formaction="?/odustani">Odustani</button>
-			<button type="submit">Završi uređivanje</button>
+			<button type="submit">Kreiraj objavu</button>
 		</div>
 	</form>
 </div>

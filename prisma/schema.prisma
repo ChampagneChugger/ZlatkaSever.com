@@ -10,6 +10,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model VideoSessions {
+  id     Int    @id @default(autoincrement())
+  url    String @unique
+  User   User   @relation(fields: [userId], references: [id])
+  userId String
+}
+
 model PostLikes {
   id Int @id @default(autoincrement())
 
@@ -42,17 +49,17 @@ model Page {
 }
 
 model User {
-  id              String      @id @unique
+  id              String          @id @unique
   name            String
-  username        String      @unique
-  role            Int         @default(0)
-  profile_picture String      @default("/korisnik.svg")
-  email           String      @unique
+  username        String          @unique
+  role            Int             @default(0)
+  profile_picture String          @default("/korisnik.svg")
+  email           String          @unique
   about           String?
   posts           Post[]
   pages           Page[]
-  videoid         String
   PostLikes       PostLikes[]
+  VideoSessions   VideoSessions[]
   session         Session[]
   Key             Key[]
 

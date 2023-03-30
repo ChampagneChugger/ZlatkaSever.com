@@ -28,7 +28,7 @@
 <div class="blogheader">
 	<h1>Blog</h1>
 	<div class="formwrapper">
-		<form use:enhance method="POST">
+		<form on:submit|preventDefault={pretraga}>
 			<label for="search">
 				<iconify-icon icon="material-symbols:search-rounded" />
 				<input bind:value={search} id="search" type="text" placeholder="Pretraga" />
