@@ -4,7 +4,7 @@
 		<h1>O meni</h1>
 	</div>
 	<h2>Ja sam Zlatka Sever, psihoterapeut sa x godina iskustva</h2>
-	<img src="ja.jpg" alt="Slika Zlatke Sever" />
+	<img src="ja-2.jpg" alt="Slika Zlatke Sever" />
 	<div class="lista">
 		<div class="listitem">
 			<i><iconify-icon icon="clarity:dot-circle-line" /></i>

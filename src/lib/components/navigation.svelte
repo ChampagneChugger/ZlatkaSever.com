@@ -18,6 +18,7 @@
 
 	beforeNavigate(() => {
 		otvoreni = false
+		linksa = false
 	})
 
 	$: {

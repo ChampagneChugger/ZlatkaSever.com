@@ -43,6 +43,10 @@ nav a img {
     max-width: 60%;
 }
 
+.pcp {
+    display: none;
+}
+
 nav i {
     font-size: 40px;
     align-self: center;
@@ -112,6 +116,7 @@ nav i {
     background-color: transparent;
     outline: none;
     border: 0px;
+    cursor: pointer;
 }
 
 .subnav form {
@@ -483,6 +488,13 @@ tr p {
     color: #F4F5EF;
     letter-spacing: 2px;
     font-size: 30px;
+}
+
+.recenzije h2 {
+    font-family: "Montserrat";
+    color: #F4F5EF;
+    font-size: 18px;
+    text-align: center;
 }
 
 .splide__slide img {
@@ -883,6 +895,7 @@ hr {
     letter-spacing: 2px;
     font-size: 11px;
     border: 0px;
+    cursor: pointer;
 }
 
 .profileheader {
@@ -1536,6 +1549,7 @@ s {
     text-decoration: none;
     border-radius: 20px;
     box-shadow: 0px 0px 10px #d4d4d0;
+    cursor: pointer;
 }
 
 .blogitem img {
@@ -1563,6 +1577,7 @@ s {
     font-weight: bold;
     border: 0px;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .blogitem .like {
@@ -2204,6 +2219,445 @@ s {
     display: none;
 }
 
+.coachingr .recenzije h2 {
+    color: #473E39;
+}
+
 .coachingr .recenzije img {
     border-radius: 0px;
+}
+
+@media screen and (min-width: 425px) {
+    .garancija .krugh {
+        top: 0px;
+    }
+
+    .coaching img {
+        max-width: 90%;
+    }
+
+    .coaching h1 {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .moja-misija img {
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    nav a img {
+        max-width: 30%;
+    }
+
+    .omeni img {
+        display: block;
+        margin: 0px auto 40px auto;
+        max-width: 60%;
+    }
+
+    .popborder {
+        width: 105%;
+    }
+
+    .lista {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .lista p {
+        line-height: 25px;
+    }
+
+    .gitems {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kh {
+        margin-bottom: 50px;
+    }
+
+    .kslika {
+        display: flex;
+        justify-content: center;
+    }
+
+    .kslikaframe {
+        max-width: 80%;
+    }
+
+    .konzultacije img {
+        max-width: 80%;
+    }
+
+    .blog {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pagination {
+        grid-column: 1 / -1;
+    }
+
+    .coaching img {
+        max-width: 70%;
+    }
+
+    .moja-misija img {
+        max-width: 70%;
+    }
+
+    .certc {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    nav {
+        height: 80px;
+    }
+
+    header img {
+        max-width: 40%;
+    }
+
+    .krug {
+        width: 40%;
+        left: 320px;
+    }
+
+    .omeni img {
+        max-width: 40%;
+    }
+
+    .popup {
+        padding: 80px 40px;
+    }
+
+    .konzultacije img {
+        max-width: 40%;
+    }
+
+    .kslikaframe {
+        max-width: 40%;
+    }
+
+    .gitems {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .thumbnail {
+        max-width: 70%;
+    }
+
+    .coaching img {
+        max-width: 40%;
+    }
+
+    .moja-misija img {
+        max-width: 40%;
+    }
+
+    .mojac h1 {
+        margin-bottom: 40px;
+    }
+
+    .profileoptions {
+        width: 400px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    header img {
+        max-width: 70%;
+    }
+
+    .headerwrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        margin-bottom: 60px;
+    }
+
+    .headerp1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 115px);
+        padding-top: 0px;
+        flex-direction: column;
+    }
+
+    .slika {
+        margin-bottom: 0px;
+    }
+
+    .krug {
+        width: 500px;
+        height: 400px;
+        top: -10px;
+        left: 110px;
+    }
+
+    header h1 {
+        font-size: 70px;
+    }
+
+    header h2 {
+        font-size: 50px;
+    }
+
+    header h3 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .omeni h1 {
+        font-size: 40px;
+    }
+
+    .omeni h2 {
+        font-size: 22px;
+    }
+
+    .lista {
+        width: 70%;
+        margin: 0px auto;
+        gap: 25px;
+    }
+
+    .lista p {
+        font-size: 18px;
+    }
+
+    .omeni img {
+        margin: 0px auto 60px auto;
+    }
+
+    .garancija h1 {
+        font-size: 40px;
+    }
+
+    .rad h1 {
+        font-size: 40px;
+    }
+
+    .rad h2 {
+        font-size: 22px;
+    }
+
+    tr p {
+        font-size: 18px;
+    }
+
+    .recenzije h1 {
+        font-size: 40px;
+    }
+
+    .recenzije h2 {
+        font-size: 22px;
+    }
+
+    .konzultacije h1 {
+        font-size: 40px;
+    }
+
+    .pageheader h1 {
+        font-size: 40px;
+    }
+
+    .pageheader span p {
+        font-size: 18px;
+    }
+
+    .pagecontent h1 {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    .pagecontent p {
+        font-size: 18px;
+    }
+
+    .editpage p {
+        font-size: 18px;
+    }
+
+    .blogheader {
+        padding: 100px 20px;
+    }
+
+    .blogheader h1 {
+        font-size: 40px;
+    }
+
+    .blog {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .pageheader span p {
+        font-size: 14px;
+    }
+
+    .buttons button {
+        font-size: 14px;
+    }
+
+    .coaching img {
+        margin-bottom: 50px;
+    }
+
+    .coaching h1 {
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+
+    .coachingitems .citem iconify-icon {
+        font-size: 120px;
+    }
+
+    .coachingitems .citem:nth-of-type(odd) h2 {
+        font-size: 30px;
+    }
+
+    .coachingitems .citem:nth-of-type(odd) p {
+        font-size: 18px;
+    }
+
+    .coachingitems .citem:nth-of-type(even) h2 {
+        font-size: 30px;
+    }
+
+    .coachingitems .citem:nth-of-type(even) p {
+        font-size: 18px;
+    }
+
+    .coachingitems .citem {
+        padding: 60px 0px;
+    }
+
+    .footera {
+        font-size: 40px;
+    }
+
+    .footertab h1 {
+        font-size: 22px;
+    }
+
+    .footertab a {
+        font-size: 18px;
+    }
+
+    .copyright {
+        font-size: 18px;
+    }
+
+    .mojac h1 {
+        font-size: 40px;
+    }
+
+    .moja-misija p {
+        font-size: 18px;
+    }
+
+    .certifikati button {
+        font-size: 22px;
+    }
+
+    .videoheader h1 {
+        font-size: 40px;
+    }
+
+    .popup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+        height: 75%;
+    }
+
+    .popup h1 {
+        font-size: 30px;
+    }
+
+    .popborder {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    nav a img {
+        max-width: 20%;
+    }
+
+    .forma form {
+        width: 50%;
+        margin: 0px auto;
+    }
+
+    .footermenu {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+    }
+
+    .footertab h1 {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .subnav a {
+        font-size: 24px;
+    }
+
+    .subnav button {
+        font-size: 24px;
+    }
+
+    .pageheader {
+        padding: 100px 20px 40px 20px;
+    }
+
+    .pagecontent iconify-icon {
+        margin-bottom: 20px;
+    }
+
+    .registerform form button {
+        font-size: 18px;
+    }
+
+    .registerform p {
+        font-size: 18px;
+    }
+
+    .registerform p a {
+        font-size: 18px;
+    }
+
+    .forma button {
+        font-size: 18px;
+    }
+
+    .forma form p {
+        font-size: 18px;
+    }
+
+    .pcp {
+        display: block;
+    }
+
+    .mobilepc {
+        display: none;
+    }
+
+    .moja-misija p {
+        line-height: 30px;
+    }
 }

@@ -42,7 +42,7 @@
 		{#if slikabase64}
 			<img class="thumbnail" src={slikabase64} alt="Post Thumbnail" />
 		{:else}
-			<img class="thumbnail" src={"../" + page.coverImage} alt="Post Thumbnail" />
+			<img class="thumbnail" src={page.coverImage} alt="Post Thumbnail" />
 		{/if}
 		<span class="spana spana2">
 			<p class="pinfo">MAX 2MB, .PNG ili .JPEG</p>

@@ -15,8 +15,9 @@
 		<div class="krugh" />
 		<h1>Recenzije</h1>
 	</div>
-	<Splide aria-label="Recenzije" {options}>
+	<!--<Splide aria-label="Recenzije" {options}>
 		<Slide src={"ja.jpg"} alt={"Slika 1"} />
 		<Slide src={"ja.jpg"} alt={"Slika 2"} />
-	</Splide>
+	</Splide>-->
+	<h2>Trenutno nema recenzija.</h2>
 </div>

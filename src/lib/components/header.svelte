@@ -7,11 +7,15 @@
 </script>
 
 <header>
-	<h1>Zlatka Sever</h1>
-	<h2>Terapeut</h2>
-	<div class="slika">
-		<div class="krug" />
-		<img src="ja.jpg" alt="Fotografija Zlatke Sever" />
+	<div class="headerwrap">
+		<div class="headerp1">
+			<h1>Zlatka Sever</h1>
+			<h2>Terapeut</h2>
+		</div>
+		<div class="slika">
+			<div class="krug" />
+			<img src="ja.jpg" alt="Fotografija Zlatke Sever" />
+		</div>
 	</div>
 	<h3>Otkrijte svoj put</h3>
 	{#if !data.user}
