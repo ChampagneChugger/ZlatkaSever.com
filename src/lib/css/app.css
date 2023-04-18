@@ -1566,6 +1566,7 @@ s {
     font-size: 18px;
     font-family: "Montserrat";
     margin-bottom: 10px;
+    min-height: 70px;
 }
 
 .blogitem p {
