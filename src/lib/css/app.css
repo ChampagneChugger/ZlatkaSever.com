@@ -2256,6 +2256,10 @@ s {
     .moja-misija img {
         max-width: 90%;
     }
+
+    .blogitem h1 {
+        min-height: auto;
+    }
 }
 
 @media screen and (min-width: 768px) {
