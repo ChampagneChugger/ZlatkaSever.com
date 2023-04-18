@@ -20,5 +20,17 @@ export const load: PageServerLoad = async ({ locals }) => {
 
     if (role?.role == 0) {
         throw redirect(302, "/video-chat")
+    } else {
+        const allUsers = await prisma.user.findMany({
+            select: {
+                name: true,
+                username: true,
+                profile_picture: true
+            }
+        })
+
+        return {
+            allUsers
+        }
     }
 }

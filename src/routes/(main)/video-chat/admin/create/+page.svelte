@@ -34,6 +34,8 @@
 
 		goto("/video-chat/" + data)
 	}
+
+	$: console.log(odabir)
 </script>
 
 <div class="createsession">
@@ -53,7 +55,11 @@
 								<a href="/profile/{username}">{username}</a>
 								<button
 									on:click={() => {
-										if (!odabir.includes(username)) {
+										if (odabir.includes(username)) {
+											let index = odabir.indexOf(username)
+											odabir.splice(index, 1)
+											odabir = odabir
+										} else {
 											odabir.push(username)
 											odabir = odabir
 										}
@@ -69,6 +75,33 @@
 				</div>
 			{/if}
 		{/await}
+	{:else}
+		<div class="korisnici">
+			{#each data.allUsers as { username, name, profile_picture }}
+				{#if username != data.user?.username}
+					<div class="korisnik">
+						<img src={profile_picture} alt={name} />
+						<a href="/profile/{username}">{username}</a>
+						<button
+							on:click={() => {
+								if (odabir.includes(username)) {
+									let index = odabir.indexOf(username)
+									odabir.splice(index, 1)
+									odabir = odabir
+								} else {
+									odabir.push(username)
+									odabir = odabir
+								}
+							}}
+							><iconify-icon
+								icon="carbon:checkmark-filled"
+								class:chosen={odabir.includes(username)}
+							/></button
+						>
+					</div>
+				{/if}
+			{/each}
+		</div>
 	{/if}
 	{#if odabir}
 		<button class="potvrdi" on:click={kreirajSesiju}>Potvrdi</button>
