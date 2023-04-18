@@ -28,6 +28,12 @@
 		<tr>
 			<p>Koče Vas unutarnje instalacije i kompleksi</p>
 		</tr>
+		<tr>
+			<p>Kada je naizgled sve u redu, ali vi niste sretni</p>
+		</tr>
+		<tr>
+			<p>Samo želite znati više</p>
+		</tr>
 	</table>
 	{#if !data.user}
 		<h2 class="prijaviseh2">Ako ste ovo Vi, prijavite se</h2>

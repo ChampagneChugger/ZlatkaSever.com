@@ -335,6 +335,7 @@ header h3 {
     letter-spacing: 1px;
     line-height: 27px;
     margin-bottom: 40px;
+    font-family: "Montserrat";
 }
 
 .omeni img {
@@ -350,6 +351,7 @@ header h3 {
 .lista p {
     font-family: "Montserrat";
     font-size: 14px;
+    line-height: 28px;
 }
 
 .lista {
@@ -368,7 +370,9 @@ header h3 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
 .garancija {
@@ -1734,6 +1738,13 @@ s {
     gap: 5px;
 }
 
+.coachingc p {
+    font-family: "Montserrat";
+    margin-bottom: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
 .likeaction iconify-icon {
     color: #F4F5EF;
     transition: 0.5s;
@@ -2150,7 +2161,7 @@ s {
     font-family: "Montserrat";
     font-size: 25px;
     line-height: 37px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .coachingitems {
@@ -2238,7 +2249,7 @@ s {
 
     .coaching h1 {
         font-size: 22px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     .moja-misija img {
@@ -2261,13 +2272,8 @@ s {
         width: 105%;
     }
 
-    .lista {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
     .lista p {
-        line-height: 25px;
+        line-height: 28px;
     }
 
     .gitems {
@@ -2367,9 +2373,13 @@ s {
     }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
     header img {
         max-width: 70%;
+    }
+
+    .coachingc p {
+        font-size: 18px;
     }
 
     .headerwrap {
@@ -2400,8 +2410,8 @@ s {
     }
 
     .krug {
-        width: 500px;
-        height: 400px;
+        width: 450px;
+        height: 350px;
         top: -10px;
         left: 110px;
     }
@@ -2516,7 +2526,7 @@ s {
 
     .coaching h1 {
         font-size: 30px;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
     .coachingitems .citem iconify-icon {
@@ -2590,6 +2600,18 @@ s {
 
     .popborder {
         display: none;
+    }
+
+    .forma form {
+        width: 50%;
+        margin: 0px auto;
+    }
+}
+
+@media screen and (min-width: 1385px) {
+    .krug {
+        width: 500px;
+        height: 400px;
     }
 }
 
