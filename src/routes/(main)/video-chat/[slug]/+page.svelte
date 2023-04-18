@@ -54,7 +54,7 @@
 					removeParticipant: true,
 					endMeeting: true
 				},
-				redirectOnLeave: "http://localhost:5173/video-chat/" + slug + "/delete"
+				redirectOnLeave: "https://zlatkasever.com/video-chat/" + slug + "/delete"
 			}
 
 			meeting.init(config)

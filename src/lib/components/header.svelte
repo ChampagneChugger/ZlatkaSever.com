@@ -14,7 +14,7 @@
 		</div>
 		<div class="slika">
 			<div class="krug" />
-			<img src="ja.jpg" alt="Fotografija Zlatke Sever" />
+			<img src="ja.jpeg" alt="Fotografija Zlatke Sever" />
 		</div>
 	</div>
 	<h3>Otkrijte svoj put</h3>

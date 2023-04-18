@@ -17,9 +17,21 @@
 		</p>
 	</div>
 	<div class="coachingitems">
-		<Citem icon="ic:baseline-people-alt" title="Neki naslov" text="Neki tekst" />
-		<Citem icon="mdi:puzzle" title="Neki naslov" text="Neki tekst" />
-		<Citem icon="material-symbols:star" title="Neki naslov" text="Neki tekst" />
+		<Citem
+			icon="ph:plant-fill"
+			title="Ima li život smisla?"
+			text="Nema, kompletno postojanje samo po sebi je neutralno. Mi smo ti koji mu daju značenje i naš smisao života ovisi o nama."
+		/>
+		<Citem
+			icon="material-symbols:star"
+			title="Što je uspjeh?"
+			text="Niti novac, niti veza, niti kuća, niti auto. Uspjeh je poznavati sebe, prihvaćati sebe i biti zadovoljan bez obzira na vanjske okolnosti."
+		/>
+		<Citem
+			icon="game-icons:galaxy"
+			title="Jesmo li sami u svemiru?"
+			text="Mi smo mala točkica na rubu galaksije dobrovoljno došli u treću dimenziju. Činimo se nevažni, a opet, o nama ovisi kompletna ekspanzija svemira."
+		/>
 	</div>
 	<div class="coachingr">
 		<h1>Što klijenti kažu o meni?</h1>
