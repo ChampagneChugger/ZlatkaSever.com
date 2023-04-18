@@ -24,7 +24,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
     if (isAdmins == 0) {
         throw error(401, "Nemate pristup ovoj stranici.")
     } else {
-        await prisma.videoSessions.delete({
+        await prisma.videoSessions.deleteMany({
             where: {
                 url: params.slug
             }

@@ -12,7 +12,7 @@ datasource db {
 
 model VideoSessions {
   id     Int    @id @default(autoincrement())
-  url    String @unique
+  url    String
   User   User   @relation(fields: [userId], references: [id])
   userId String
 }

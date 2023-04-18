@@ -22,7 +22,7 @@
 		pretraga = null
 	}
 
-	let odabir: string
+	let odabir: string[] = []
 
 	async function kreirajSesiju() {
 		const response = await fetch("/api/kreirajsesiju", {
@@ -53,11 +53,14 @@
 								<a href="/profile/{username}">{username}</a>
 								<button
 									on:click={() => {
-										odabir = username
+										if (!odabir.includes(username)) {
+											odabir.push(username)
+											odabir = odabir
+										}
 									}}
 									><iconify-icon
 										icon="carbon:checkmark-filled"
-										class:chosen={odabir == username}
+										class:chosen={odabir.includes(username)}
 									/></button
 								>
 							</div>

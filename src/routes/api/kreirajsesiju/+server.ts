@@ -6,29 +6,40 @@ import { v4 as uuid } from "uuid"
 export const POST: RequestHandler = async ({ request }) => {
     const data = await request.json()
 
-    const getUserId = async () => {
-        const userid = await prisma.user.findUnique({
-            where: {
-                username: data
-            }, select: {
-                id: true
-            }
-        })
+    let userIDS: string[] = []
 
-        return userid
+    for (let i = 0; i < data.length; i++) {
+        const getUserId = async () => {
+            const userid = await prisma.user.findUnique({
+                where: {
+                    username: data[i]
+                }, select: {
+                    id: true
+                }
+            })
+
+            return userid
+        }
+
+        const userID = await getUserId()
+
+        if (userID) {
+            userIDS.push(userID.id)
+        }
     }
 
-    const korisnikID = await getUserId()
     let randomURL = uuid()
 
-    await prisma.videoSessions.create({
-        data: {
-            userId: String(korisnikID?.id),
-            url: randomURL
-        }
-    })
+    for (let i = 0; i < userIDS.length; i++) {
+        await prisma.videoSessions.create({
+            data: {
+                userId: userIDS[i],
+                url: randomURL
+            }
+        })
+    }
 
     return json({
-        data: randomURL,
+        data: randomURL
     })
 }
