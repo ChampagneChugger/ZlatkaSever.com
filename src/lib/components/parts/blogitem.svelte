@@ -81,7 +81,7 @@
 					on:click|stopPropagation={() => {
 						navigator.share({
 							title: title,
-							text: "Blog post",
+							text: title + "\n",
 							url: "https://zlatkasever.com/blog/" + slug
 						})
 						copied = true
