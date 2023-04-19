@@ -10,7 +10,7 @@
 	export let loggedin: boolean
 	export let id: number
 
-	$: url = $page.url.href
+	$: url = $page.params.slug
 
 	export let PostLikes: object
 
@@ -63,7 +63,9 @@
 				</div>
 				<button
 					on:click|stopPropagation={() => {
-						navigator.clipboard.writeText(url)
+						navigator.share({
+							url: "https://zlatkasever.com/blog/" + url
+						})
 						copied = true
 					}}
 					class="blogspan noclassb"

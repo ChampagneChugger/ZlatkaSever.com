@@ -80,8 +80,6 @@
 				<button
 					on:click|stopPropagation={() => {
 						navigator.share({
-							title: title,
-							text: title + "\n",
 							url: "https://zlatkasever.com/blog/" + slug
 						})
 						copied = true
@@ -101,7 +99,9 @@
 				<span>{likes} {likes == BigInt(1) ? "like" : "likes"}</span>
 				<button
 					on:click|stopPropagation={() => {
-						navigator.clipboard.writeText(url + "/" + slug)
+						navigator.share({
+							url: "https://zlatkasever.com/blog/" + slug
+						})
 						copied = true
 					}}
 					class="blogspan"
