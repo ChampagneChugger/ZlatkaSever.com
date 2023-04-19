@@ -17,6 +17,10 @@
 	$: role = data.admin?.role
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - Blog</title>
+</svelte:head>
+
 <Blogheader />
 
 <div class="blog">

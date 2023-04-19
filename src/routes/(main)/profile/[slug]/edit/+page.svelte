@@ -31,6 +31,10 @@
 	$: profile = data.profile
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - {profile?.username} - uređivanje profila</title>
+</svelte:head>
+
 <div class="editprofile">
 	<h1>Profil</h1>
 	<h2>Svoje postavke možete promijeniti ispod</h2>

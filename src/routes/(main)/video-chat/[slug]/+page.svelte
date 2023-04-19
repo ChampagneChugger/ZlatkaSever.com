@@ -64,6 +64,10 @@
 	const meeting = new VideoSDKMeeting()
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - Aktualna video sesija</title>
+</svelte:head>
+
 <div class="pozivwrapper">
 	<div id="poziv" />
 </div>

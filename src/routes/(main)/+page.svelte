@@ -22,6 +22,10 @@
 	})
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - Terapeut</title>
+</svelte:head>
+
 <Header {data} />
 <Omeni />
 <Garancija />

@@ -3,6 +3,10 @@
 	let clicked: boolean
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - Moja misija</title>
+</svelte:head>
+
 <div class="moja-misija">
 	<img src="ja-2.jpg" alt="Zlatka Sever" />
 	<div class="mojac">

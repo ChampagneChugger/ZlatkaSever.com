@@ -34,9 +34,11 @@
 
 		goto("/video-chat/" + data)
 	}
-
-	$: console.log(odabir)
 </script>
+
+<svelte:head>
+	<title>Zlatka Sever - Kreiranje video sesije</title>
+</svelte:head>
 
 <div class="createsession">
 	<h1>Pretraži korisnike</h1>

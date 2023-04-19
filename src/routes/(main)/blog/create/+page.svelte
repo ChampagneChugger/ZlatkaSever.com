@@ -30,6 +30,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - Kreiranje objave</title>
+</svelte:head>
+
 <div class="editpage">
 	<form use:enhance method="POST" action="?/kreiraj">
 		<p>Thumbnail slika</p>

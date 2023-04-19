@@ -8,6 +8,10 @@
 	$: profile = data.profile
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - {profile.username}</title>
+</svelte:head>
+
 <div class="profile">
 	<Profileheader />
 	<div class="profilecontent">

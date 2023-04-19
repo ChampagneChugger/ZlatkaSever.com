@@ -3,6 +3,10 @@
 	import Recenzije from "$lib/components/recenzije.svelte"
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - Coaching</title>
+</svelte:head>
+
 <div class="coaching">
 	<div class="coachingc">
 		<img src="ja.jpg" alt="Zlatka Sever" />

@@ -36,6 +36,10 @@
 	$: post = data.page
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - Uređivanje objave</title>
+</svelte:head>
+
 <div class="editpage">
 	<form use:enhance method="POST" action="?/uredi">
 		<p>Thumbnail slika</p>

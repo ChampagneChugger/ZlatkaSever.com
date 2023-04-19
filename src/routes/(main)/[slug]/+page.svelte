@@ -12,6 +12,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - {page.title}</title>
+</svelte:head>
+
 <div class="page">
 	<PageHeader {vlasnik} naslov={page.title} korisnik={page.User.username} ime={page.User.name} />
 	<div class="pagecontent">

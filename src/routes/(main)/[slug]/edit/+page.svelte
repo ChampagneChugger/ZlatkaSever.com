@@ -9,6 +9,10 @@
 	let content: string
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - uređivanje stranice</title>
+</svelte:head>
+
 <div class="editpage">
 	<form use:enhance method="POST" action="?/uredi">
 		<!-- svelte-ignore a11y-label-has-associated-control -->

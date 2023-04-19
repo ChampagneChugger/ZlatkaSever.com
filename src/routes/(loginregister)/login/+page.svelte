@@ -23,6 +23,10 @@
 	export let form: ActionData
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - Prijava</title>
+</svelte:head>
+
 <div class="registerc">
 	<div class="registerimg">
 		<img src="logo.svg" alt="Logo" />

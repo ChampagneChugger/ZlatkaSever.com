@@ -32,6 +32,10 @@
 	$: role = data.admin?.role
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - {postcontent?.title}</title>
+</svelte:head>
+
 {#if Number(pagenumber) && blogposts && postcount}
 	<Blogheader />
 	<div class="blog">

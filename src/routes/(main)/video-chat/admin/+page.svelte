@@ -7,6 +7,10 @@
 	$: videosesije = data.videosesije
 </script>
 
+<svelte:head>
+	<title>Zlatka Sever - Video sesije</title>
+</svelte:head>
+
 <VideoHeader title={"Sve aktivne video sesije"} />
 
 <div class="video">
