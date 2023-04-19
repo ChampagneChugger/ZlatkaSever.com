@@ -79,7 +79,11 @@
 				</form>
 				<button
 					on:click|stopPropagation={() => {
-						navigator.clipboard.writeText(url + "/" + slug)
+						navigator.share({
+							title: title,
+							text: "Blog post",
+							url: "https://zlatkasever.com/blog/" + slug
+						})
 						copied = true
 					}}
 					class="blogspan"
