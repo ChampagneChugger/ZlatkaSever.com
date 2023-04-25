@@ -35,6 +35,7 @@
 		"@prisma/client": "^4.10.1",
 		"@splidejs/svelte-splide": "^0.2.9",
 		"@supabase/supabase-js": "^2.21.0",
+		"@vercel/analytics": "^1.0.0",
 		"@videosdk.live/rtc-js-prebuilt": "^0.3.29",
 		"iconify-icon": "^1.0.3",
 		"lucia-auth": "^0.6.2",

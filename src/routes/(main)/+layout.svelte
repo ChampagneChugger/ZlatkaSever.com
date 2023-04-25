@@ -6,8 +6,12 @@
 	import NavAdj from "$lib/components/navigationadjust.svelte"
 	import popup from "$lib/stores/popup"
 	import { page } from "$app/stores"
-
 	import type { LayoutData } from "./$types"
+	import { dev } from "$app/environment"
+	import { inject } from "@vercel/analytics"
+
+	inject({ mode: dev ? "development" : "production" })
+
 	export let data: LayoutData
 
 	export let navHeight: number
