@@ -2,6 +2,8 @@
 	import Editor from "$lib/components/editor.svelte"
 	import { enhance } from "$app/forms"
 	import { slide } from "svelte/transition"
+	import { supabase } from "$lib/supabase/supabase"
+	import { v4 as uuidv4 } from "uuid"
 	import type { PageData } from "./$types"
 
 	export let data: PageData
@@ -12,10 +14,15 @@
 	let slika: any
 	let slikabase64: string | undefined
 	let slikaprevelika: boolean = false
+	let supaimg: string | undefined
 
 	async function image() {
 		let file = slika.files[0]
 		let size = file.size / 1024
+
+		const { data } = await supabase.storage.from("slike").upload(uuidv4() + ".png", file)
+
+		supaimg = data?.path
 
 		if (size <= 2048) {
 			slikaprevelika = false
@@ -23,7 +30,6 @@
 
 			reader.onloadend = () => {
 				slikabase64 = reader.result?.toString()
-				console.log(slikabase64)
 			}
 
 			reader.readAsDataURL(file)
@@ -68,7 +74,7 @@
 			/>
 			<button>Prenesi svoju sliku</button>
 		</div>
-		<input class="hidden" type="text" name="base64" bind:value={slikabase64} />
+		<input class="hidden" type="text" name="base64" bind:value={supaimg} />
 		<!-- svelte-ignore a11y-label-has-associated-control -->
 		<p>Sadržaj</p>
 		<Editor content={post.content} bind:content2={content} />

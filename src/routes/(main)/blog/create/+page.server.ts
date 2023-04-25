@@ -1,7 +1,6 @@
 import { prisma } from "$lib/server/prisma";
 import type { PageServerLoad, Actions } from "./$types"
 import { redirect } from "@sveltejs/kit"
-import { cloud } from "$lib/server/cloudinary"
 
 export const load: PageServerLoad = async ({ locals }) => {
     const { user, session } = await locals.validateUser()
@@ -38,11 +37,10 @@ export const actions: Actions = {
         titleNew = titleNew.replace(/\s/g, "")
 
         if (base64.length) {
-            const slikainfo = await cloud.uploader.upload(base64)
             await prisma.post.create({
                 data: {
                     title: title,
-                    coverImage: slikainfo.secure_url,
+                    coverImage: "https://hhesboxchergnesswrud.supabase.co/storage/v1/object/public/slike/" + base64,
                     content: pagecontent,
                     slug: titleNew,
                     userId: user?.userID

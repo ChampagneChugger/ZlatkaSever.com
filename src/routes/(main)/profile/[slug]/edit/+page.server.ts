@@ -1,7 +1,6 @@
 import { prisma } from "$lib/server/prisma";
 import { redirect, error } from "@sveltejs/kit";
 import type { PageServerLoad, Actions } from "./$types"
-import { cloud } from "$lib/server/cloudinary"
 
 export const load: PageServerLoad = async ({ locals, params }) => {
     const { user, session } = await locals.validateUser()
@@ -37,7 +36,6 @@ export const actions: Actions = {
         }
 
         if (base64.length) {
-            const slikainfo = await cloud.uploader.upload(base64)
             try {
                 await prisma.user.update({
                     where: {
@@ -46,7 +44,7 @@ export const actions: Actions = {
                     data: {
                         name,
                         about,
-                        profile_picture: slikainfo.secure_url
+                        profile_picture: "https://hhesboxchergnesswrud.supabase.co/storage/v1/object/public/slike/" + base64
                     }
                 })
             } catch (err) {

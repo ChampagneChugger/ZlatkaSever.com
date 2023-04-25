@@ -1,16 +1,23 @@
 <script lang="ts">
 	import { enhance } from "$app/forms"
 	import { slide } from "svelte/transition"
+	import { supabase } from "$lib/supabase/supabase"
+	import { v4 as uuidv4 } from "uuid"
 	import type { PageData } from "./$types"
 
 	let slika: any
 	let slikabase64: string | undefined
 	let slikaprevelika: boolean = false
 	export let data: PageData
+	let supaimg: string | undefined
 
 	async function image() {
 		let file = slika.files[0]
 		let size = file.size / 1024
+
+		const { data } = await supabase.storage.from("slike").upload(uuidv4() + ".png", file)
+
+		supaimg = data?.path
 
 		if (size <= 2048) {
 			slikaprevelika = false
@@ -64,7 +71,7 @@
 		{#if slikaprevelika}
 			<p transition:slide class="slikaerror"><span>GREŠKA:</span> Slika je veća od 2MB.</p>
 		{/if}
-		<input class="hidden" type="text" name="base64" bind:value={slikabase64} />
+		<input class="hidden" type="text" name="base64" bind:value={supaimg} />
 		<label class="label2" for="name">
 			Ime
 			<input type="text" id="name" name="name" maxlength="30" value={profile?.name} />

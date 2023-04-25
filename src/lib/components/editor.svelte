@@ -2,6 +2,8 @@
 	//@ts-nocheck
 	import { quill } from "svelte-quill"
 	import "$lib/css/quill.snow.css"
+	import { supabase } from "$lib/supabase/supabase"
+	import { v4 as uuidv4 } from "uuid"
 	import { onMount, tick } from "svelte"
 
 	let editor: HTMLElement
@@ -39,14 +41,16 @@
 					reader.onload = async (e) => {
 						let range = this.quill.getSelection(true)
 
-						const response = await fetch("/api/imageupload", {
-							method: "POST",
-							body: JSON.stringify(e.target?.result)
-						})
+						const { data } = await supabase.storage
+							.from("slike")
+							.upload(uuidv4() + ".png", fileInput.files[0])
 
-						const { uploadedData } = await response.json()
-
-						this.quill.editor.insertEmbed(range.index, "image", uploadedData)
+						this.quill.editor.insertEmbed(
+							range.index,
+							"image",
+							"https://hhesboxchergnesswrud.supabase.co/storage/v1/object/public/slike/" +
+								data?.path
+						)
 						fileInput.value = ""
 					}
 					reader.readAsDataURL(fileInput.files[0])
