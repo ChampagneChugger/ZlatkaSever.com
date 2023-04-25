@@ -23,6 +23,7 @@
 
 			reader.onloadend = () => {
 				slikabase64 = reader.result?.toString()
+				console.log(slikabase64)
 			}
 
 			reader.readAsDataURL(file)
@@ -65,7 +66,7 @@
 				type="file"
 				accept="image/png, image/jpeg"
 			/>
-			<button>Promijeni sliku profila</button>
+			<button>Prenesi svoju sliku</button>
 		</div>
 		<input class="hidden" type="text" name="base64" bind:value={slikabase64} />
 		<!-- svelte-ignore a11y-label-has-associated-control -->
