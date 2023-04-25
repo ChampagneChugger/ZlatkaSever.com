@@ -2610,8 +2610,8 @@ s {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 90%;
-        height: 75%;
+        width: 30%;
+        height: 40%;
     }
 
     .popup h1 {

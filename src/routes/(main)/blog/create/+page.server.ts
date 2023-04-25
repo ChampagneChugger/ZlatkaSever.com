@@ -37,16 +37,8 @@ export const actions: Actions = {
         let titleNew = title.toLowerCase()
         titleNew = titleNew.replace(/\s/g, "")
 
-        const options = {
-            transformation: [
-                {
-                    quality: "50"
-                }
-            ]
-        }
-
         if (base64.length) {
-            const slikainfo = await cloud.uploader.upload(base64, options)
+            const slikainfo = await cloud.uploader.upload(base64, { transformation: { quality: 50 } })
             await prisma.post.create({
                 data: {
                     title: title,
